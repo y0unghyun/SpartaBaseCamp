@@ -34,7 +34,6 @@ func main() -> Double {
     
     if let input = input {
         let inputs = input.components(separatedBy: " ")
-//        print(inputs)
         
         guard !inputs[0].isEmpty else {
             print("입력 값이 없습니다. 다시 시도해주세요.")
@@ -43,14 +42,15 @@ func main() -> Double {
         x = Double(inputs[0])!
         op = inputs[1]
         y = Double(inputs[2])!
-    }
+    } // 입력으로 받은 "(정수) (연산자) (정수)" 형태의 문자열에서 각각을 추출해서 미리 선언해두었던 변수에 대입
     
-    let calc = Calculator()
-    let result = calc.calculate(op, x, y)
+    let calc = Calculator() // Calculator 객체 생성
     
-    print(result)
+    let result = calc.calculate(op, x, y) // result 변수에 Calculate 클래스 내부의 calculate 함수 실행 결과를 저장
+    
+    print(result) // 결과 출력
+    
+    print("방금 계산한 값에 추가적으로 연산을 진행하시겠습니까?")
     
     return result
 }
-
-main()
