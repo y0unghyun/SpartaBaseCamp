@@ -11,13 +11,17 @@ class Calculator {
     func calculate(_ inputOperator: String, _ firstNumber: Double, _ secondNumber: Double) -> Double {
     
         if inputOperator == "+" {
-            return firstNumber + secondNumber
+            let op = AddOperation()
+            return op.operate(firstNumber, secondNumber)
         } else if inputOperator == "-" {
-            return firstNumber - secondNumber
+            let op = SubstractOperation()
+            return op.operate(firstNumber, secondNumber)
         } else if inputOperator == "*" {
-            return firstNumber * secondNumber
+            let op = MultiplyOperation()
+            return op.operate(firstNumber, secondNumber)
         } else if inputOperator == "/" {
-            return firstNumber / secondNumber
+            let op = DivideOperation()
+            return op.operate(firstNumber, secondNumber)
         } else if inputOperator == "%" {
             return firstNumber.truncatingRemainder(dividingBy: secondNumber)
         } else {
@@ -25,6 +29,36 @@ class Calculator {
             return 0 }
     }
 }
+
+class AddOperation {
+    func operate(_ firstNumber: Double, _ secondNumber: Double) -> Double {
+        return firstNumber + secondNumber
+    }
+}
+
+class SubstractOperation {
+    func operate(_ firstNumber: Double, _ secondNumber: Double) -> Double {
+        return firstNumber - secondNumber
+    }
+}
+
+class MultiplyOperation {
+    func operate(_ firstNumber: Double, _ secondNumber: Double) -> Double {
+        return firstNumber * secondNumber
+    }
+}
+
+class DivideOperation {
+    func operate(_ firstNumber: Double, _ secondNumber: Double) -> Double {
+        if secondNumber == 0 {
+            print("0으로는 나눌 수 없습니다!")
+            return 0
+        } else {
+            return firstNumber / secondNumber
+        }
+    }
+}
+
 
 func main() -> Double {
     print("사칙연산자 중 하나를 사용한 사칙연산 식을 입력하세요. 단 숫자와 연산기호는 공백으로 구분되어야 합니다.")
@@ -50,7 +84,8 @@ func main() -> Double {
     
     print(result) // 결과 출력
     
-    print("방금 계산한 값에 추가적으로 연산을 진행하시겠습니까?")
+//    print("방금 계산한 값에 추가적으로 연산을 진행하시겠습니까?") ** 미구현기능
     
     return result
 }
+

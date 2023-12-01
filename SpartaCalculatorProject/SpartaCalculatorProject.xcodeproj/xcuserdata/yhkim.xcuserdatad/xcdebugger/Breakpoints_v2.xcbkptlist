@@ -14,10 +14,10 @@
             filePath = "SpartaCalculatorProject/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "main()"
+            landmarkType = "9">
             <Locations>
                <Location
                   uuid = "63BA01AF-568D-4F30-AFE4-5A7CD11D3BBD - 385025f283322cf1"
